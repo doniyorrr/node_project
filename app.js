@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const path = require('path')
 const rIndex = require('./routers/index')
 const rAdd = require('./routers/add')
+const chalk = require('chalk')
 const port = 3000
 const app = express()
 
@@ -12,10 +13,10 @@ mongoose.connect('mongodb+srv://doniyor:123qwe123qwe@cluster0.mgnqw.mongodb.net/
 
 const db = mongoose.connection
 db.on('open' , ()=>{
-    console.log("Mongoose running ")
+    console.log(chalk.bgGreen.red("Mongoose running "))
 })
 db.on('error' , (err)=>{
-    console.log("Mongoose ERROR running " ,err)
+    console.log(chalk.red("Mongoose ERROR running " ,err))
 })
 
 // bodyParser settings
