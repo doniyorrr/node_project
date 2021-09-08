@@ -1,0 +1,45 @@
+extends layout 
+block add 
+ .container
+   h1= page
+   form(method="POST")
+    if datas
+        .mb-3
+            label.form-label(for='exampleInputEmail1') Mahsulot nomi
+            input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' name="title" value=datas.title)
+        .mb-3
+            label.form-label(for='exampleInputPassword1') muallifi
+            input#exampleInputPassword1.form-control(type='text' name="author" value=datas.author)
+        .mb-3
+            label.form-label(for='exampleInputPassword1') narhi
+            input#exampleInputPassword1.form-control(type='text' name="price" value=datas.price)
+        .mb-3
+            label.form-label(for='exampleInputPassword1') korganlar
+            input#exampleInputPassword1.form-control(type='text' name="reading" value=datas.meta.reading)
+        .mb-3
+            label.form-label(for='exampleInputPassword1') sotib olganlar
+            input#exampleInputPassword1.form-control(type='text' name="buying" value=datas.meta.buying)
+        .mb-3
+            label.form-label(for='exampleInputPassword1') rasmi
+            input#exampleInputPassword1.form-control(type='file' name="photo" value=datas.photo)
+        button.btn.btn-primary(type='submit')=button
+    else 
+        .mb-3
+            label.form-label(for='exampleInputEmail1') Mahsulot nomi
+            input#exampleInputEmail1.form-control(type='text' aria-describedby='emailHelp' name="title" )
+        .mb-3
+            label.form-label(for='exampleInputPassword1') muallifi
+            input#exampleInputPassword1.form-control(type='text' name="author")
+        .mb-3
+            label.form-label(for='exampleInputPassword1') narhi
+            input#exampleInputPassword1.form-control(type='text' name="price")
+        .mb-3
+            label.form-label(for='exampleInputPassword1') korganlar
+            input#exampleInputPassword1.form-control(type='text' name="reading")
+        .mb-3
+            label.form-label(for='exampleInputPassword1') sotib olganlar
+            input#exampleInputPassword1.form-control(type='text' name="buying")
+        .mb-3
+            label.form-label(for='exampleInputPassword1') rasmi
+            input#exampleInputPassword1.form-control(type='file' name="photo")
+        button.btn.btn-primary(type='submit')= button

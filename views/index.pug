@@ -1,0 +1,41 @@
+extends layout 
+block index 
+   nav.navbar.navbar-expand-lg.navbar-light.bg-danger
+    .container-fluid
+        a.navbar-brand(href='#') Navbar
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+        ul.navbar-nav.me-auto.mb-2.mb-lg-0
+            li.nav-item
+            a.nav-link.active(aria-current='page' href='/') Home
+            li.nav-item
+            a.nav-link(href='/add') Mahsulot
+   .container 
+    .row 
+     .col-12 
+     each db , i in datas
+      .box 
+       .box_left 
+        .box_left_img 
+         img(src=db.photo, alt="")
+        .box_left_text 
+         h1= db.title
+         h2= db.author 
+         p= db.price 
+         .box_left_icon 
+          p 
+           i(class="fas fa-book-open")
+           span= db.meta.reading
+          p 
+           i(class="fas fa-shopping-cart")
+           span= db.meta.buying
+          p 
+           i(class="fas fa-calendar-alt")
+           span= db.dateTime.toDateString()
+
+       .box_right
+        a(href="/product/"+db.id).btn.btn-success
+         i(class="fas fa-wrench")  
+        a(href="/delete/"+db.id ).btn.btn-danger 
+         i(class="fas fa-trash") 

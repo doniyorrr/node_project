@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: gray;
+}
+.box{
+    background: #fff;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.box .box_left{
+    display: flex;
+}
+.box .box_left .box_left_img img{
+    width: 250px;
+    height: 250px;
+    border: 1px solid black;
+    margin-right: 20px;
+}
+
+
+.box .box_right{
+    display: flex;
+    flex-direction: column;
+
+}
+.box .box_right a{
+    margin: 10px;
+}
